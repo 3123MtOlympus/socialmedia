@@ -1,5 +1,9 @@
-const User = require('./User');
-const Tag = require('./Tag');
-const Application = require('./Application');
+const mongoose = require('mongoose');
+const { Schema } = mongoose;
 
-module.exports = { User, Application, Tag };
+const thoughtSchema = new Schema({
+});
+
+const Thought = mongoose.model('Thought', thoughtSchema);
+
+module.exports = Thought;

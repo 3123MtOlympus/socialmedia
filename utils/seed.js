@@ -1,6 +1,6 @@
 const connection = require('../config/connection');
 const { User, Thoughts } = require('../models');
-const { getRandomName, getRandomApplications } = require('./data');
+const { getRandomThoughts } = require('./data');
 
 connection.on('error', (err) => err);
 
@@ -35,8 +35,7 @@ connection.once('open', async () => {
   await User.collection.insertMany(users);
   await Thoughts.collection.insertMany(thoughts);
 
-  // loop through the saved applications, for each application we need to generate a application response and insert the application responses
-  console.table(users);
+console.table(users);
   console.table(thoughts);
   console.info('Seeding complete! 🌱');
   process.exit(0);
